@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .colunas-container {
   display: flex;
   justify-content: space-between;
