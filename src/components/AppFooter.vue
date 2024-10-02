@@ -3,10 +3,10 @@
     <div class="container">
      <nav>
         <ul>
-          <li><a href="/sobre">Home</a></li>
-          <li><a href="/contato">Sobre nós</a></li>
-          <li><a href="/politica-de-privacidade">Serviços</a></li>
-          <li><a href="/politica-de-privacidade">Contatos</a></li>
+          <li @click="changePage('home')"><a>Home</a></li>
+          <li @click="changePage('about')"><a>Sobre nós</a></li>
+          <li @click="changePage('services')"><a>Serviços</a></li>
+          <li @click="changePage('contact')"><a>Contatos</a></li>
         </ul>
       </nav>
 
@@ -19,7 +19,20 @@
 
 <script>
 export default {
-  name: 'AppFooter'
+  name: 'AppFooter',
+  methods: {
+    changePage(rota) {
+      if (rota === 'home') {
+        this.$router.push('/home');
+      } else if (rota === 'about') {
+        this.$router.push('/about');
+      } else if (rota === 'services') {
+        this.$router.push('/services');
+      }  else if (rota === 'contact') {
+        this.$router.push('/contact');
+      }
+    }
+  }
 }
 </script>
 
@@ -27,7 +40,7 @@ export default {
 .footer {
   height: 200px;
   margin-top:30px;
-  background-color: #333;
+  background-color: #242e3d;
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -38,6 +51,7 @@ nav{
 }
 nav ul li{
     list-style: none;
+    cursor: pointer;
     
 }
 

@@ -20,6 +20,22 @@ export default {
 
 <style>
 *{
-  font-family: Montserrat;
+  font-family: Montserrat; 
+}
+
+h1{
+  font-size:25pt;
+}
+
+h2{
+  font-size:22pt;
+}
+
+h3{
+  font-size:18pt;
+}
+
+p{
+  font-size: 14pt;
 }
 </style>
