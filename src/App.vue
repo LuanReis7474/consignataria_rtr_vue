@@ -1,11 +1,10 @@
 <template>
   <AppHeader></AppHeader>
-  <router-view />
+  <RouterView></RouterView>
   <AppFooter></AppFooter>
 </template>
 
 <script>
-// Importando os componentes
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
 

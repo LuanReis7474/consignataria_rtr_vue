@@ -1,27 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import LandingpageView from '@/views/LandingpageView.vue';
+import ContactView from '@/views/ContactView.vue';
 
 const routes = [
   {
     path: '/home',
     name: 'home',
-    component: HomeView
+    component: LandingpageView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    path: '/contato',
+    name: 'contato',
+    component: ContactView
   },
-  {
-    path: '/services',
-    name: 'services',
-    component: () => import('../views/ServicesView.vue')
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: () => import('../views/ContactView.vue')
-  }
 ]
 
 const router = createRouter({
