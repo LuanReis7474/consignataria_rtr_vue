@@ -7,17 +7,17 @@
       <ul>
         <li>
           <router-link :to="{ path: '/landing-page', hash: '#section-1' }">
-            {{ $t('header.home') }} <!-- Texto traduzido -->
+            {{ $t('header.home') }} 
           </router-link>
         </li>
         <li>
           <router-link :to="{ path: '/landing-page', hash: '#section-2' }">
-            {{ $t('header.about') }} <!-- Texto traduzido -->
+            {{ $t('header.about') }} 
           </router-link>
         </li>
         <li>
           <router-link :to="{ path: '/landing-page', hash: '#section-3' }">
-            {{ $t('header.services') }} <!-- Texto traduzido -->
+            {{ $t('header.services') }}
           </router-link>
         </li>
       </ul>
@@ -27,7 +27,7 @@
         <button>
           {{ $t('header.contact') }}
         </button>
-      </router-link> <!-- Texto traduzido -->
+      </router-link> 
     </div>
     <div class="menu-toggle" @click="toggleMenu">
       <span></span>
@@ -37,14 +37,14 @@
   </header>
   <nav class="mobile-nav" v-if="isMenuOpen">
     <ul>
-      <li><a href="#home">{{ $t('header.home') }}</a></li> <!-- Texto traduzido -->
-      <li><a href="#about">{{ $t('header.about') }}</a></li> <!-- Texto traduzido -->
-      <li><a href="#services">{{ $t('header.services') }}</a></li> <!-- Texto traduzido -->
+      <li><a href="#home">{{ $t('header.home') }}</a></li> 
+      <li><a href="#about">{{ $t('header.about') }}</a></li> 
+      <li><a href="#services">{{ $t('header.services') }}</a></li> 
     </ul>
     <div class="button-contact-mobile">
       <button>
          <router-link to="/contato">{{ $t('header.contact') }}</router-link>
-      </button> <!-- Texto traduzido -->
+      </button> 
     </div>
   </nav>
 </template>

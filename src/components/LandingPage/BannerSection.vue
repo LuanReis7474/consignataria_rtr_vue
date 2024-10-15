@@ -91,7 +91,7 @@ p {
     font-size: 3rem;
   }
 }
-/* Media queries para responsividade abaixo de 1024px */
+
 @media (max-width: 1024px) {
   .banner-initial {
     height: 400px;
@@ -147,7 +147,6 @@ p {
 
   h2 {
     font-size: 1rem;
-    /* Texto principal menor no mobile */
   }
 
   p {

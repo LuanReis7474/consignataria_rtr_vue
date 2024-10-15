@@ -108,7 +108,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease; /* Suaviza a redução */
+  transition: all 0.3s ease;
 }
 
 .info-box {
@@ -160,7 +160,7 @@ export default {
   color: white;
 }
 
-/* Responsividade */
+
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;

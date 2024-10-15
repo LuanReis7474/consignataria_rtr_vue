@@ -30,7 +30,6 @@ export default {
 </script>
 
 <style scoped>
-/* Layout geral */
 .content-section {
   background-color: #f0f0f0;
   display: flex;
@@ -128,7 +127,6 @@ export default {
   box-sizing: border-box;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 1200px) {
   .content-section {
     flex-direction: column;

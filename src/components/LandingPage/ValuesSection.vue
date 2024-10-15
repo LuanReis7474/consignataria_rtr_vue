@@ -78,7 +78,6 @@ export default {
   height: 48px;
   background-color: #204E51;
   font-size: 1rem;
-  /* Ajuste usando rem */
   color: #FFFFFF;
   border-radius: 8px;
   border: none;
@@ -130,7 +129,6 @@ export default {
 @media (max-width: 1024px) {
   .boxes-container {
     flex-wrap: wrap;
-    /* Permite quebra de linha em telas menores que 1024px */
   }
 }
 
@@ -138,7 +136,6 @@ export default {
   width: 300px;
   height: 430px;
   background-color: #FFFFFF;
-  /* Cor branca para as boxes */
   border-radius: 20px;
   display: flex;
   flex-direction: column;

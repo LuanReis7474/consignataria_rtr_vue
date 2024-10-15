@@ -27,7 +27,7 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f9f9f9; /* Cor de fundo da página */
+  background-color: #f9f9f9; 
 }
 
 .privacy-policy-box {

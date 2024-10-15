@@ -63,14 +63,14 @@ export default {
 
 @media (max-width: 1024px) {
   .boxes-container {
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores que 1024px */
+    flex-wrap: wrap; 
   }
 }
 
 .service-box {
   width: 281px;
   height: 281px;
-  background-color: #FFFFFF; /* Cor branca para as boxes */
+  background-color: #FFFFFF; 
   border-radius: 20px;
   display: flex;
   flex-direction: column;

@@ -98,41 +98,34 @@ export default {
 @media (max-width: 1024px) {
   .banner {
     height: 450px;
-    /* Reduzindo a altura do banner em telas menores */
   }
 
   .content {
     left: 50px;
-    /* Ajustando a margem esquerda */
   }
 
   .banner-title {
     font-size: 48px;
-    /* Reduzindo o tamanho do título */
   }
 
   .button-contact button {
     height: 40px;
     width:fit-content;
     font-size: 0.875rem;
-    /* Ajuste de tamanho do botão */
   }
 }
 
 @media (max-width: 768px) {
   .banner {
     height: 350px;
-    /* Reduzindo mais a altura para dispositivos menores */
   }
 
   .content {
     left: 20px;
-    /* Ajuste maior da margem */
   }
 
   .banner-title {
     font-size: 36px;
-    /* Reduzindo mais o título */
   }
 
   .button-contact button {

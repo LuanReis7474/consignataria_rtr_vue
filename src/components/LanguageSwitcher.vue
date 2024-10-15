@@ -1,7 +1,7 @@
 <template>
   <div class="language-switcher">
     <button @click="toggleOpen" class="toggle-button">
-      🌐 <!-- Ícone de globo para representar troca de idioma -->
+      🌐 
     </button>
     <transition name="fade">
       <div v-if="isOpen" class="dropdown-menu">
@@ -26,16 +26,16 @@
 export default {
   data() {
     return {
-      isOpen: false, // Controla o estado do menu de idiomas (aberto/fechado)
+      isOpen: false, 
     };
   },
   methods: {
     toggleOpen() {
-      this.isOpen = !this.isOpen; // Alterna o estado de visibilidade
+      this.isOpen = !this.isOpen; 
     },
     changeLanguage(language) {
-      this.$i18n.locale = language; // Altera o idioma no Vue I18n
-      this.isOpen = false; // Fecha o menu após selecionar um idioma
+      this.$i18n.locale = language; 
+      this.isOpen = false; 
     },
   },
 };
@@ -83,7 +83,6 @@ export default {
   transform: scale(1.1);
 }
 
-/* Transição suave para abrir/fechar o menu */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.3s;
 }

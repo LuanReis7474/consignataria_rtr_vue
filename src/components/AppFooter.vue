@@ -19,7 +19,7 @@
           </li>
           <li>
             <router-link :to="{ path: '/landing-page', hash: '#section-3' }">
-              {{ $t('footer.services') }} <!-- Texto traduzido -->
+              {{ $t('footer.services') }} 
             </router-link>
           </li>
           <li>
@@ -59,12 +59,12 @@ export default {
 
 <style scoped>
 a{
-  text-decoration: none; /* Remove o sublinhado */
-  color: inherit;        /* Mantém a cor herdada do pai */
+  text-decoration: none; 
+  color: inherit;       
 }
 
 .footer {
-  height: auto; /* Para ajustar a altura conforme o conteúdo */
+  height: auto; 
   background-color: #204E51;
   color: white;
   padding-left: 11vw;
@@ -73,19 +73,19 @@ a{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  flex-wrap: wrap; 
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .end-logo img {
-  max-width: 300px; /* Limita o tamanho da logo */
+  max-width: 300px; 
   height: auto;
 }
 
 .sections {
   display: flex;
-  flex-wrap: wrap; /* Faz com que as colunas fiquem embaixo uma da outra em telas pequenas */
+  flex-wrap: wrap; 
   text-align: start;
 }
 
@@ -115,27 +115,26 @@ nav h2 {
   font-size: 28px;
 }
 
-/* Responsividade */
 @media (max-width: 1200px) {
   .footer {
-    flex-direction: column; /* Empilha os itens verticalmente */
-    text-align: center; /* Centraliza o conteúdo */
+    flex-direction: column; 
+    text-align: center; 
     padding-left: 5vw;
     padding-right: 5vw;
   }
 
   .end-logo {
-    margin-bottom: 20px; /* Espaçamento entre logo e navegação */
+    margin-bottom: 20px; 
   }
 
   .sections {
-    justify-content: center; /* Centraliza as colunas na tela */
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   nav ul li {
-    font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+    font-size: 18px; 
     margin-bottom: 20px;
   }
 
@@ -151,12 +150,12 @@ nav h2 {
   }
 
   .sections {
-    flex-direction: column; /* Empilha as colunas em uma única coluna */
+    flex-direction: column; 
   }
 
   .second-column {
     margin-left: 0;
-    margin-top: 20px; /* Adiciona espaço entre as colunas */
+    margin-top: 20px; 
   }
 
   nav ul li {
