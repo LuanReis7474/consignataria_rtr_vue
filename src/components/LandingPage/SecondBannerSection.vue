@@ -1,15 +1,23 @@
 <template>
   <div class="banner">
-    <img src="@/assets/fotoGado.jpg" alt="Banner" class="banner-image">
+    <img src="@/assets/fotoGado.jpg" alt="Banner" class="banner-image" />
     <div class="overlay"></div>
     <div class="content">
-      <h1 class="banner-title">Referência em<br>intermediação e transporte<br>de gado na LATAM</h1>
+      <h2 class="banner-title">{{ $t('secondBanner.title') }}</h2>
       <div class="button-container">
         <div class="button-contact">
-          <button>Saiba Mais</button>
+           <router-link to="/contato" >
+              <button>
+                {{ $t('secondBanner.learnMoreButton') }}
+              </button>
+          </router-link>
         </div>
         <div class="button-contact">
-          <button>Fale Conosco</button>
+          <router-link to="/contato">
+            <button class="second">
+                {{ $t('secondBanner.contactButton') }}
+            </button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -19,7 +27,7 @@
 <script>
 export default {
   name: 'BannerComponent',
-}
+};
 </script>
 
 <style scoped>
@@ -28,85 +36,131 @@ export default {
   width: 100%;
   height: 629px;
   overflow: hidden;
+}
 
-  .banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* A imagem será ajustada */
-  }
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Camada preta com 60% de transparência */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 5.5vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.banner-title {
+  width:90%;
+  font-size: 72px;
+  margin-bottom: 75px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.button-contact button {
+  cursor: pointer;
+  width:181px;
+  height: 48px;
+  background-color: #204E51;
+  font-size: 1rem;
+  color: #FFFFFF;
+  border-radius: 8px;
+  border: none;
+  padding: 0 20px;
+}
+
+.button-contact .second {
+  background-color: transparent !important;
+  color: white !important;
+  border: solid 1px white !important;
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    height: 450px;
+    /* Reduzindo a altura do banner em telas menores */
   }
 
   .content {
-    position: absolute;
-    top: 0;
-    left: 93px; /* Distância da margem esquerda */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; /* Alinhado à esquerda */
-    text-align: left;
-    color: #FFFFFF;
+    left: 50px;
+    /* Ajustando a margem esquerda */
   }
 
   .banner-title {
-    font-size: 72px;
-    margin-bottom: 20px;
-  }
-
-  .button-container {
-    display: flex;
-    gap: 20px;
+    font-size: 48px;
+    /* Reduzindo o tamanho do título */
   }
 
   .button-contact button {
-    width: max-content;
-    height: 48px;
-    background-color: #204E51;
-    font-size: 1rem;
-    color: #FFFFFF;
-    border-radius: 8px;
-    border: none;
-    padding: 0 20px;
+    height: 40px;
+    width:fit-content;
+    font-size: 0.875rem;
+    /* Ajuste de tamanho do botão */
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 350px;
+    /* Reduzindo mais a altura para dispositivos menores */
   }
 
-  /* Estilos responsivos */
-  @media (max-width: 1024px) {
-    .content {
-      left: 50px; /* Ajustando a distância da margem esquerda em telas menores */
-    }
-
-    .banner-title {
-      font-size: 48px; /* Reduzindo o tamanho da fonte em dispositivos móveis */
-    }
-
-    .button-contact button {
-      height: 40px; /* Ajustando o tamanho do botão */
-      font-size: 0.875rem;
-    }
+  .content {
+    left: 20px;
+    /* Ajuste maior da margem */
   }
 
-  @media (max-width: 768px) {
-    .content {
-      left: 20px; /* Mais redução da margem em dispositivos menores */
-    }
+  .banner-title {
+    font-size: 36px;
+    /* Reduzindo mais o título */
+  }
 
-    .banner-title {
-      font-size: 36px; /* Mais redução no título */
-    }
+  .button-contact button {
+    height: 36px;
+    width:fit-content;
+    font-size: 0.75rem;
+  }
+}
 
-    .button-contact button {
-      height: 36px;
-      font-size: 0.75rem;
-    }
+@media (max-width: 480px) {
+  .banner {
+    height: 250px;
+  }
+
+  .banner-image {
+    object-position: center;
+  }
+
+  .banner-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .button-contact button {
+    height: 30px;
+    width:fit-content;
+    font-size: 0.75rem;
+    padding: 0 10px;
   }
 }
 </style>

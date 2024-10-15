@@ -1,23 +1,23 @@
-<template>
- <div class="banner-initial">
+<template>  
+  <div class="banner-initial" id="section-1">
     <div class="text-banner">
-        <h1><b>Consolidada no<br> mercado de compra e venda de gado</b></h1>
-        <p>Com uma sólida experiência no setor, nossa missão é oferecer soluções completas<br>
-        para nossos clientes, desde a aquisição e transporte até o acompanhamento do abate</p>
-    
-        <div class="button-contact">
-          <button>Entre em contato</button>
-        </div>
+      <h2><b v-html="$t('banner.title')"></b></h2>
+      <p v-html="$t('banner.description')"></p>
+
+      <div class="button-contact">
+        <router-link to="/contato">
+          <button>{{ $t('banner.button') }}</button>
+        </router-link>
+      </div>
     </div>
-    
+
     <img src="../../assets/banner.png" alt="Banner">
- </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'BannerSection',
-  components: {}
 }
 </script>
 
@@ -25,14 +25,15 @@ export default {
 .button-contact {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 55px;
 }
 
 .button-contact button {
+  cursor: pointer;
   width: max-content;
   height: 48px;
   background-color: #204E51;
-  font-size: 1rem; /* Ajuste usando rem */
+  font-size: 1rem;
   color: #FFFFFF;
   border-radius: 8px;
   border: none;
@@ -41,7 +42,7 @@ export default {
 .banner-initial {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Para garantir que só o recorte da imagem seja exibido */
+  overflow: hidden;
 }
 
 .banner-initial img {
@@ -61,15 +62,15 @@ export default {
   right: 11%;
 }
 
-h1 {
+h2 {
   text-align: center;
-  font-size: 5rem; /* Responsivo com rem */
+  font-size: 5rem;
   color: white;
 }
 
 p {
   text-align: center;
-  font-size: 1rem; /* Responsivo com rem */
+  font-size: 1rem;
   color: white;
 }
 
@@ -81,64 +82,81 @@ p {
   width: 100%;
   height: 100%;
   background-color: #1E1E1E;
-  opacity: 0.6; /* 60% de transparência */
+  opacity: 0.6;
   z-index: 1;
 }
 
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
 /* Media queries para responsividade abaixo de 1024px */
 @media (max-width: 1024px) {
   .banner-initial {
-    height: 400px; /* Altura fixa para garantir o recorte */
+    height: 400px;
   }
 
   .banner-initial img {
-    width: 100vw; /* Garante que a imagem ocupe a largura da tela */
+    width: 100vw;
     height: 100%;
-    object-fit: cover; /* Mantém a proporção da imagem e permite o recorte */
-    object-position: center; /* Recorte centralizado */
+    object-fit: cover;
+    object-position: center;
   }
 
-  h1 {
-    font-size: 2.5rem; /* Diminui tamanho no tablet */
+  h2 {
+    font-size: 2.5rem;
   }
 
   p {
-    font-size: 1rem; /* Texto menor */
+    font-size: 0.875rem;
   }
 
   .banner-initial .text-banner {
-    position: absolute;
-    top: 10px;
+    top: 30px;
+  }
+
+  .button-contact {
+    margin-top: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem; /* Diminui mais no mobile */
+  .banner-initial {
+    height: 350px;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 
   p {
-    font-size: 0.875rem; /* Texto menor no mobile */
+    font-size: 0.75rem;
+  }
+
+  .button-contact button {
+    font-size: 0.875rem;
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .banner-initial {
-    width: 100%;
-    height: 300px; /* Altura menor para caber no mobile */
+    height: 300px;
   }
 
-  h1 {
-    font-size: 1.5rem; /* Texto principal reduzido para caber na tela */
+  h2 {
+    font-size: 1rem;
+    /* Texto principal menor no mobile */
   }
 
   p {
-    font-size: 0.75rem; /* Texto menor */
+    font-size: 0.5rem;
   }
 
   .button-contact button {
-    font-size: 0.875rem; /* Ajusta tamanho do botão no mobile */
-    height: 40px; /* Ajusta altura do botão no mobile */
+    font-size: 0.75rem;
+    height: 36px;
   }
 }
 </style>

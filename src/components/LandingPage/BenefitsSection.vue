@@ -1,19 +1,51 @@
-<template>
-  <div class="container">
-    <!-- Seção Esquerda: Título, Descrição e Botão -->
-    <div class="left-content">
-      <h1 class="title">Título Grande</h1>
-      <p class="description">Descrição abaixo com tamanho 36px.</p>
-      <div class="button-contact">
-        <button>Clique Aqui</button>
-      </div>
+<template>  
+  <div class="container" id="section-5">
+    <div class="left-block">
+      <h1 class="title">{{ $t('benefitsSection.leftBlock.title') }}</h1>
+      <p class="description">{{ $t('benefitsSection.leftBlock.description') }}</p>
+      <router-link to="/contato">
+        <button class="action-button">{{ $t('benefitsSection.leftBlock.actionButton') }}</button>
+      </router-link>
     </div>
 
-    <!-- Seção Direita: Box com Itens -->
-    <div class="right-box">
-      <div class="box-item" v-for="(item, index) in items" :key="index">
-        <img :src="item.icon" alt="Ícone" class="icon">
-        <p class="item-text">{{ item.text }}</p>
+    <div class="right-block">
+      <div class="info-box">
+        <div class="icon-section">
+          <div class="icon-container">
+            <img :src="require('@/assets/star.png')" :alt="$t('benefitsSection.rightBlock.experience.iconAlt')" />
+          </div>
+          <div class="text-section">
+            <h2 class="right-title">{{ $t('benefitsSection.rightBlock.experience.title') }}</h2>
+            <p class="right-description">{{ $t('benefitsSection.rightBlock.experience.description') }}</p>
+          </div>
+        </div>
+        <div class="icon-section">
+          <div class="icon-container">
+            <img :src="require('@/assets/cubo.png')" :alt="$t('benefitsSection.rightBlock.services.iconAlt')" />
+          </div>
+          <div class="text-section">
+            <h2 class="right-title">{{ $t('benefitsSection.rightBlock.services.title') }}</h2>
+            <p class="right-description">{{ $t('benefitsSection.rightBlock.services.description') }}</p>
+          </div>
+        </div>
+        <div class="icon-section">
+          <div class="icon-container">
+            <img :src="require('@/assets/check.png')" :alt="$t('benefitsSection.rightBlock.clients.iconAlt')" />
+          </div>
+          <div class="text-section">
+            <h2 class="right-title">{{ $t('benefitsSection.rightBlock.clients.title') }}</h2>
+            <p class="right-description">{{ $t('benefitsSection.rightBlock.clients.description') }}</p>
+          </div>
+        </div>
+        <div class="icon-section">
+          <div class="icon-container">
+            <img :src="require('@/assets/equipe.png')" :alt="$t('benefitsSection.rightBlock.team.iconAlt')" />
+          </div>
+          <div class="text-section">
+            <h2 class="right-title">{{ $t('benefitsSection.rightBlock.team.title') }}</h2>
+            <p class="right-description">{{ $t('benefitsSection.rightBlock.team.description') }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -21,129 +53,229 @@
 
 <script>
 export default {
-  name: 'BenefitsSection',
-  data() {
-    return {
-      items: [
-        { icon: '@/assets/logo.png', text: 'Texto do Item 1' },
-        { icon: '@/assets/logo.png', text: 'Texto do Item 2' },
-        { icon: '@/assets/logo.png', text: 'Texto do Item 3' },
-        { icon: '@/assets/logo.png', text: 'Texto do Item 4' },
-      ]
-    };
-  }
-}
+  name: "BenefitsSection",
+};
 </script>
 
 <style scoped>
 .container {
+  background-color: #F0F0F0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Responsividade */
-  padding: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  padding-left: 5.5vw;
+  padding-right: 5.5vw;
+  padding-bottom: 59px;
 }
 
-/* Seção Esquerda */
-.left-content {
+.left-block {
   flex: 1;
-  max-width: 50%; /* Ocupará até metade da largura */
+  margin-right: 0rem;
 }
 
 .title {
-  font-size: 72px;
-  color: #000000;
-  margin-bottom: 20px;
+  font-size: 3.8rem;
+  color: #204e51;
 }
 
 .description {
-  font-size: 36px;
-  color: #555555;
-  margin-bottom: 40px;
+  margin-top: 1.8rem;
+  font-size: 2rem;
+  color: #1e1e1e;
 }
 
-.button-contact button {
-  width: max-content;
-  height: 48px;
-  background-color: #204E51;
-  font-size: 1rem;
-  color: #FFFFFF;
-  border-radius: 8px;
+.action-button {
+  margin-top: 2.625rem;
+  padding: 0.8rem 2rem;
+  background-color: #204e51;
+  color: white;
   border: none;
-  padding: 0 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Seção Direita */
-.right-box {
-  background-color: #204E51;
-  width: 670px;
-  height: 785px;
-  padding: 30px;
+.right-block {
+  flex: 1;
+  background-color: #2a5d60;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 10px;
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease; /* Suaviza a redução */
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 18%;
+  flex-direction: column;
+  width: 100%;
+}
+
+.icon-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.icon-container {
+  width: 125px;
+  height: 125px;
+  background-color: #1c4547;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container img {
+  width: 60px;
+  height: auto;
+}
+
+.text-section {
+  margin-left: 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
 }
 
-.box-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.right-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-top: -4px;
+  margin-bottom: 0rem;
 }
 
-.icon {
-  width: 40px;
-  height: 40px;
-}
-
-.item-text {
-  color: #FFFFFF;
-  font-size: 1.5rem;
+.right-description {
+  font-size: 1rem;
+  color: white;
 }
 
 /* Responsividade */
-@media (max-width: 1024px) {
-  .left-content {
-    max-width: 100%; /* Ocupará 100% da largura em telas menores */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .title {
-    font-size: 48px; /* Reduzindo o tamanho da fonte em dispositivos menores */
-  }
-
-  .description {
-    font-size: 24px;
-  }
-
-  .right-box {
+  .left-block, .right-block {
     width: 100%;
-    height: auto; /* Ajusta a altura para conteúdos variáveis */
+    margin: 0;
+    padding: 2rem;
   }
 
-  .icon {
-    width: 30px;
-    height: 30px;
+  .right-block {
+    margin-left: 5.5vw;
+    width:70% !important; 
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .right-block {
+    padding: 2rem;
   }
 
-  .item-text {
-    font-size: 1.25rem; /* Reduzindo a fonte dos itens no box */
+  .left-block{
+    width: fit-content;
+  }
+
+  .icon-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .icon-container img {
+    width: 50px;
+  }
+
+  .text-section {
+    margin-left: 30px;
+  }
+
+  .right-title {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .right-box {
-    width: 100%;
-    padding: 20px; /* Mais ajuste no padding em telas menores */
+  .title {
+    font-size: 2.5rem;
   }
 
-  .icon {
-    width: 25px;
-    height: 25px;
+  .description {
+    font-size: 1.6rem;
   }
 
-  .item-text {
-    font-size: 1rem;
+  .left-block{
+    width: fit-content;
+  }
+
+  .right-block {
+    width:70%;
+    padding: 2rem;
+  }
+
+  .right-title {
+    font-size: 2rem;
+  }
+
+  .icon-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .text-section {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+  }
+
+  .left-block{
+    width: fit-content;
+  }
+  
+  .right-block {
+    width:90%;
+  }
+
+  .right-title {
+    margin-top:6px;
+    font-size: 1.2rem;
+  }
+
+  .right-description {
+    font-size: 0.8rem;
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .text-section {
+    margin-left: 15px;
   }
 }
 </style>

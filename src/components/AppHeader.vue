@@ -5,13 +5,29 @@
     </div>
     <nav class="site-nav">
       <ul>
-        <li @click="changePage('home')"><a><b>Home</b></a></li>
-        <li @click="changePage('about')"><a><b>Sobre nós</b></a></li>
-        <li @click="changePage('services')"><a><b>Serviços</b></a></li>
+        <li>
+          <router-link :to="{ path: '/landing-page', hash: '#section-1' }">
+            {{ $t('header.home') }} <!-- Texto traduzido -->
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ path: '/landing-page', hash: '#section-2' }">
+            {{ $t('header.about') }} <!-- Texto traduzido -->
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ path: '/landing-page', hash: '#section-3' }">
+            {{ $t('header.services') }} <!-- Texto traduzido -->
+          </router-link>
+        </li>
       </ul>
     </nav>
     <div class="button-contact">
-      <button>Fale Conosco</button>
+      <router-link to="/contato">
+        <button>
+          {{ $t('header.contact') }}
+        </button>
+      </router-link> <!-- Texto traduzido -->
     </div>
     <div class="menu-toggle" @click="toggleMenu">
       <span></span>
@@ -21,12 +37,14 @@
   </header>
   <nav class="mobile-nav" v-if="isMenuOpen">
     <ul>
-      <li @click="changePage('home')"><a>Home</a></li>
-      <li @click="changePage('about')"><a>Sobre nós</a></li>
-      <li @click="changePage('services')"><a>Serviços</a></li>
+      <li><a href="#home">{{ $t('header.home') }}</a></li> <!-- Texto traduzido -->
+      <li><a href="#about">{{ $t('header.about') }}</a></li> <!-- Texto traduzido -->
+      <li><a href="#services">{{ $t('header.services') }}</a></li> <!-- Texto traduzido -->
     </ul>
     <div class="button-contact-mobile">
-      <button>Fale Conosco</button>
+      <button>
+         <router-link to="/contato">{{ $t('header.contact') }}</router-link>
+      </button> <!-- Texto traduzido -->
     </div>
   </nav>
 </template>
@@ -41,7 +59,7 @@ export default {
   },
   methods: {
     changePage(rota) {
-      this.isMenuOpen = false; 
+      this.isMenuOpen = false;
       this.$router.push(`/${rota}`);
     },
     toggleMenu() {
@@ -59,17 +77,17 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 5.5vw;
 }
 
 .site-logo {
-  flex: 0 1 auto; 
+  flex: 0 1 auto;
 }
 
 .site-nav {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .site-nav ul {
@@ -81,10 +99,13 @@ export default {
 
 .site-nav li {
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 2vw;
 }
 
 .site-nav a {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 20px;
   text-decoration: none;
   color: black;
   display: block;
@@ -95,6 +116,7 @@ export default {
 }
 
 .button-contact button {
+  cursor: pointer;
   width: 159px;
   height: 48px;
   background-color: #204E51;
@@ -105,7 +127,7 @@ export default {
 }
 
 .menu-toggle {
-  display: none; 
+  display: none;
   flex-direction: column;
   cursor: pointer;
 }
@@ -118,7 +140,7 @@ export default {
 }
 
 .mobile-nav {
-  display: none; 
+  display: none;
 }
 
 .mobile-nav ul {
@@ -129,44 +151,45 @@ export default {
 }
 
 .button-contact-mobile {
-  margin-top: 10px; 
+  margin-top: 10px;
   display: flex;
   justify-content: center;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .button-contact-mobile button {
+  cursor: pointer;
   width: max-content !important;
-  height: 36px; 
+  height: 36px;
   background-color: #204E51;
-  font-size: 16px; 
+  font-size: 16px;
   color: #FFFFFF;
   border-radius: 8px;
   border: none;
 }
 
 @media (max-width: 768px) {
-  .button-contact
-  {
+  .button-contact {
     display: none;
   }
+
   .site-nav {
-    display: none; 
+    display: none;
   }
-  
+
   .menu-toggle {
-    display: flex; 
+    display: flex;
   }
-  
+
   .mobile-nav {
-    display: block; 
+    display: block;
     position: absolute;
-    top: 142px; 
+    top: 142px;
     left: 0;
     right: 0;
     background-color: white;
     border-bottom: 1px solid #ccc;
-    z-index: 10; 
+    z-index: 10;
   }
 }
 </style>

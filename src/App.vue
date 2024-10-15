@@ -1,4 +1,5 @@
 <template>
+  <LanguageSwitcher></LanguageSwitcher>
   <AppHeader></AppHeader>
   <RouterView></RouterView>
   <AppFooter></AppFooter>
@@ -7,34 +8,36 @@
 <script>
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
+import LanguageSwitcher from './components/LanguageSwitcher.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
+    LanguageSwitcher
   }
 };
 </script>
 
 <style>
-*{
-  font-family: Montserrat; 
+* {
+  font-family: Montserrat;
 }
 
-h1{
-  font-size:25pt;
+h1 {
+  font-size: 25pt;
 }
 
-h2{
-  font-size:22pt;
+h2 {
+  font-size: 22pt;
 }
 
-h3{
-  font-size:18pt;
+h3 {
+  font-size: 18pt;
 }
 
-p{
+p {
   font-size: 14pt;
 }
 </style>

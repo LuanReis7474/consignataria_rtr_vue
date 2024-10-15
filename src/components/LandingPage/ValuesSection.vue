@@ -1,139 +1,246 @@
-<template>
-  <div class="services-section">
-    <!-- Título e descrição -->
+<template> 
+  <div class="values-section" id="section-4">
     <div class="header">
-      <h1>{{ title }}</h1>
-      <p>{{ description }}</p>
+      <h2>{{ $t('valuesSection.title') }}</h2>
+      <p>{{ $t('valuesSection.subtitle') }}</p>
     </div>
 
-    <!-- Boxes com ícones e descrições, todos na mesma linha -->
     <div class="boxes-container">
-      <div class="service-box" v-for="(service, index) in services" :key="index">
-        <img :src="service.icon" alt="Service Icon" class="service-icon" />
-        <p class="service-description">{{ service.text }}</p>
+      <div class="value-box">
+        <div class="box-image">
+          <img src="@/assets/integridade.png" alt="Integridade Icon" class="value-icon" />
+        </div>
+        <p class="value-title">{{ $t('valuesSection.integrity.title') }}</p>
+        <p class="value-description">{{ $t('valuesSection.integrity.description') }}</p>
       </div>
+
+      <div class="value-box">
+        <div class="box-image">
+          <img src="@/assets/transparencia.png" alt="Transparência Icon" class="value-icon" />
+        </div>
+        <p class="value-title">{{ $t('valuesSection.transparency.title') }}</p>
+        <p class="value-description">{{ $t('valuesSection.transparency.description') }}</p>
+      </div>
+
+      <div class="value-box">
+        <div class="box-image">
+          <img src="@/assets/excelencia.png" alt="Excelência Icon" class="value-icon" />
+        </div>
+        <p class="value-title">{{ $t('valuesSection.excellence.title') }}</p>
+        <p class="value-description">{{ $t('valuesSection.excellence.description') }}</p>
+      </div>
+
+      <div class="value-box">
+        <div class="box-image">
+          <img src="@/assets/responsabilidade.png" alt="Responsabilidade Icon" class="value-icon" />
+        </div>
+        <p class="value-title">{{ $t('valuesSection.responsibility.title') }}</p>
+        <p class="value-description">{{ $t('valuesSection.responsibility.description') }}</p>
+      </div>
+    </div>
+
+    <div class="button-contact">
+       <router-link to="/contato">
+          <button>
+            {{ $t('valuesSection.contactButton') }}
+          </button>
+       </router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ValuesSection',
-  data() {
-    return {
-      title: "Nossos Valores",
-      description: "Oferecemos uma ampla gama de serviços que atendem às suas necessidades.",
-      services: [
-        { icon: require('@/assets/logo.png'), text: "Serviço 1" },
-        { icon: require('@/assets/logo.png'), text: "Serviço 2" },
-        { icon: require('@/assets/logo.png'), text: "Serviço 3" },
-        { icon: require('@/assets/logo.png'), text: "Serviço 4" }
-      ]
-    };
-  }
+  name: 'ValuesSection'
 };
 </script>
 
 <style scoped>
-/* Estilos gerais */
-.services-section {
+.button-contact {
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.values-section {
   background-color: #F0F0F0;
   text-align: center;
-  padding: 20px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 5.5vw;
+  padding-right: 5.5vw;
   box-sizing: border-box;
 }
 
-/* Estilo do cabeçalho */
-.header h1 {
-  font-size: 2.5rem;
+.button-contact button {
+  cursor: pointer;
+  width: max-content;
+  height: 48px;
+  background-color: #204E51;
+  font-size: 1rem;
+  /* Ajuste usando rem */
+  color: #FFFFFF;
+  border-radius: 8px;
+  border: none;
+}
+
+.header h2 {
+  color: #204E51;
+  font-size: 3.5rem;
   margin-bottom: 10px;
 }
 
 .header p {
-  font-size: 1.25rem;
+  font-size: 1.30rem;
   margin-bottom: 30px;
 }
 
-/* Container dos boxes */
+.box-image {
+  margin-top: 17px;
+  width: 189px;
+  height: 189px;
+  background-color: #C4C4C4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.box-image img {
+  width: 138px;
+  height: 138px;
+}
+
+.value-description {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
 .boxes-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Espaçamento entre os boxes */
-  flex-wrap: nowrap; /* Impede que os boxes quebrem linha até 1024px */
+  gap: 20px;
+  flex-wrap: nowrap;
+  margin-top: 62px;
 }
 
 @media (max-width: 1024px) {
   .boxes-container {
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores que 1024px */
+    flex-wrap: wrap;
+    /* Permite quebra de linha em telas menores que 1024px */
   }
 }
 
-/* Estilo de cada box */
-.service-box {
-  width: 281px;
-  height: 508px;
-  background-color: #FFFFFF; /* Cor branca para as boxes */
-  border-radius: 10px;
+.value-box {
+  width: 300px;
+  height: 430px;
+  background-color: #FFFFFF;
+  /* Cor branca para as boxes */
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
-.service-box:hover {
+.value-box:hover {
   transform: translateY(-10px);
 }
 
-/* Estilo do ícone no topo */
-.service-icon {
+.value-icon {
   width: 80px;
   height: 80px;
   margin-bottom: 20px;
 }
 
-/* Estilo da descrição abaixo do ícone */
-.service-description {
-  font-size: 1.125rem;
-  color: #333;
+.value-title {
+  font-size: 1.5rem;
+  color: #204E51;
+  font-weight: 600;
+  margin-top: 37px;
 }
 
-/* Responsividade */
 @media (max-width: 1440px) {
-  .service-box {
+  .value-box {
     width: 250px;
-    height: 250px;
+    height: 430px;
   }
 
-  .service-icon {
+  .value-icon {
     width: 70px;
     height: 70px;
   }
 
-  .service-description {
-    font-size: 1rem;
-  }
+
 }
 
 @media (max-width: 1024px) {
-  .service-box {
+  .boxes-container {
+    flex-wrap: wrap;
+  }
+
+  .value-box {
     width: 220px;
-    height: 220px;
+    height: 350px;
   }
 
-  .service-icon {
-    width: 60px;
-    height: 60px;
+  .box-image {
+    width: 150px;
+    height: 150px;
   }
 
-  .service-description {
-    font-size: 0.875rem;
+  .box-image img {
+    width: 110px;
+    height: 110px;
   }
 
-  .header h1 {
+  .value-title {
+    font-size: 1.25rem;
+  }
+
+  .value-description {
+    font-size: 14px;
+  }
+
+  .header h2 {
+    font-size: 2.5rem;
+  }
+
+  .header p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .value-box {
+    width: 180px;
+    height: 320px;
+  }
+
+  .box-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .box-image img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .value-title {
+    font-size: 1rem;
+  }
+
+  .value-description {
+    font-size: 13px;
+  }
+
+  .header h2 {
     font-size: 2rem;
   }
 
@@ -142,44 +249,36 @@ export default {
   }
 }
 
-@media (max-width: 768px) {
-  .service-box {
-    width: 200px;
-    height: 200px;
+@media (max-width: 480px) {
+  .value-box {
+    width: 150px;
+    height: 280px;
   }
 
-  .service-icon {
-    width: 50px;
-    height: 50px;
+  .box-image {
+    width: 100px;
+    height: 100px;
   }
 
-  .service-description {
+  .box-image img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .value-title {
     font-size: 0.875rem;
   }
 
-  .header h1 {
+  .value-description {
+    font-size: 12px;
+  }
+
+  .header h2 {
     font-size: 1.75rem;
   }
 
   .header p {
     font-size: 0.875rem;
-  }
-}
-
-/* Para telas menores, alinhar os boxes verticalmente */
-@media (max-width: 480px) {
-  .service-box {
-    width: 150px;
-    height: 150px;
-  }
-
-  .service-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .service-description {
-    font-size: 0.75rem;
   }
 }
 </style>
