@@ -1,24 +1,6 @@
 # consignataria_rtr_vue
 
-## Project setup
-```
-yarn install
-```
+Projeto da Consignataria RTR feito com Vue.js, o projeto esta responsivo e tem a opção de tradução.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+![image](https://github.com/user-attachments/assets/b50ceff6-9fbf-442a-a76c-d3affbc762b7)
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
